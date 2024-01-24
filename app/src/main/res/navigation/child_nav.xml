@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/child_nav"
+    app:startDestination="@id/lightFragment">
+
+
+    <fragment
+        android:id="@+id/nightFragment"
+        android:name="com.example.playstationserver.ui.night.NightFragment"
+        android:label="NightFragment"
+        tools:layout="@layout/fragment_night" />
+
+    <fragment
+        android:id="@+id/lightFragment"
+        android:name="com.example.playstationserver.ui.light.LightFragment"
+        android:label="LightFragment"
+        tools:layout="@layout/fragment_light" />
+</navigation>

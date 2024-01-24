@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Play Station Server</string>
+    <string name="night_mode">Kúndizgi</string>
+    <string name="light_mode">Túngi</string>
+</resources>
