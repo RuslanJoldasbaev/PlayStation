@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.onEach
 
 class LightViewModel(application: Application) : AndroidViewModel(application) {
     private var dao: LightDao
-    var repo : LightRepository
+    var repo: LightRepository
 
     init {
         dao = PlayStationDatabase.getInstance(application).getLightDao()
@@ -25,15 +25,18 @@ class LightViewModel(application: Application) : AndroidViewModel(application) {
     val messageFlow = MutableSharedFlow<String>()
     val errorFlow = MutableSharedFlow<Throwable>()
 
-    suspend fun getAllLanguage() {
+
+    suspend fun getAllLight() {
         repo.getAllLight().onEach {
             when (it) {
                 is ResultData.Success -> {
                     getAllLightFLow.emit(it.data)
                 }
+
                 is ResultData.Message -> {
                     messageFlow.emit(it.message)
                 }
+
                 is ResultData.Error -> {
                     errorFlow.emit(it.error)
                 }

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/lightFragment">
 
+    <fragment
+        android:id="@+id/infoLightFragment"
+        android:name="com.example.playstationserver.ui.lightInfo.InfoLightFragment"
+        android:label="InfoLightFragment"
+        tools:layout="@layout/fragment_light_info" />
+
+    <fragment
+        android:id="@+id/lightFragment"
+        android:name="com.example.playstationserver.ui.light.LightFragment"
+        android:label="LightFragment"
+        tools:layout="@layout/fragment_light">
+        <action
+            android:id="@+id/action_lightFragment_to_infoLightFragment"
+            app:destination="@id/infoLightFragment" />
+    </fragment>
 </navigation>

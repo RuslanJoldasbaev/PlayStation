@@ -5,11 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.playstationserver.dao.LightDao
-import com.example.playstationserver.dao.NightDao
 import com.example.playstationserver.model.data.light.LightData
-import com.example.playstationserver.model.data.night.NightData
 
-@Database(entities = [LightData::class, NightData::class], version = 1)
+@Database(entities = [LightData::class], version = 4)
 abstract class PlayStationDatabase : RoomDatabase() {
     companion object {
         private var INSTANCE: PlayStationDatabase? = null
@@ -32,5 +30,4 @@ abstract class PlayStationDatabase : RoomDatabase() {
     }
 
     abstract fun getLightDao(): LightDao
-    abstract fun getNightDao(): NightDao
 }

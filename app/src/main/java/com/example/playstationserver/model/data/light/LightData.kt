@@ -8,4 +8,5 @@ data class LightData(
     @PrimaryKey val id: Int,
     val name: String,
     val img: String,
+    var is_fav: Int
 )
